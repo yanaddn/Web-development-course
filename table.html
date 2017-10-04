@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Право</title>
+	<style type="text/css">
+	       
+	      body  {
+	         background: url(books1.jpg); 
+	         background-size: cover;
+	         font-family:Calibri, sans-serif;
+	             margin-left: 10%;
+	         margin-right: 10%;      
+	      }
+
+	      ul {
+	         list-style-type: none;
+	         margin: 0;
+	         padding: 0;
+	         overflow: hidden;
+	         background-color: #f8f8f8;
+	         font-size: 20px;
+
+	      }
+
+	      li {
+	         float: left;
+	      }
+
+	      li a, .dropbtn {
+	         display: inline-block;
+	         color: #000000;          
+	         text-align: center;
+	         padding: 14px 16px;
+	         text-decoration: none;
+	      }
+
+	      li a:hover, .dropdown:hover .dropbtn {
+	         background-color: #a64452; 
+
+	      -webkit-transition:All .5s ease;
+	      -moz-transition:All .5s ease;
+	      -o-transition:All .5s ease;
+	      
+	      -webkit-transform: scale(1.025);
+	      -moz-transform: scale(1.025);
+	      -o-transform: scale(1.025);
+	      }
+
+	      li.dropdown {
+	         display: inline-block;
+	             z-index:1;
+	      }
+
+	      .dropdown-content {
+	         display: none;
+	         position: absolute;
+	         background-color: #f8f8f8;
+	         min-width: 160px;
+	      }
+
+	      .dropdown-content a {
+	         color: #000000;
+	         padding: 12px 16px;
+	         text-decoration: none;
+	         display: block;
+	         text-align: left;
+	      }
+
+	      .dropdown-content a:hover {
+	      background-color: #a64452
+	      }
+
+	      .dropdown:hover .dropdown-content {
+	         display: block;
+	      }
+
+	      .active {
+	         background-color: #a64452;
+	      }
+
+	      h1 {
+	         font-size: 250%;
+	         color: #f7c873;
+	         text-align: left;
+	         padding-left: 20%;
+	      }
+	      
+	      h2 {
+	      text-align: center;
+	      color: #f7c873;
+	      font-size: 150%;    
+	      }
+	      
+	      p {
+	         color: #f8f8f8;
+	         font-size: 150%;
+	         text-align: left;
+	      }
+	      
+	      b {
+	      color: #f7c873;
+	      }
+
+	      /* 
+	      .lpnulogo {
+	      display: block;
+	      margin: left;
+	      width: 50%;
+	      align: bottom;
+	      } 
+	      */
+
+	      footer {
+	         right: 0;
+	         bottom: 0;
+	         left: 0;
+	         background-color: #f8f8f8;
+	         text-align: center;
+	      }
+	      
+	      @keyframes bounceIn {
+	         0% {
+	             transform: scale(0.1);
+	             opacity: 0;
+				 }
+	         60% {
+	             transform: scale(1.2);
+	             opacity: 1;
+				 }
+	         100% {
+	             transform: scale(1);}
+			}
+	   
+	   .animation_header {
+	    animation-duration: 2s;
+	    animation-name: bounceIn;
+	   } 
+	      
+	   table {
+	      width:100%;
+	   }
+
+	   table, th, td {
+	      border: 1px solid #434343;
+	          border-collapse: collapse;
+	   }
+
+	   th, td {
+	      padding: 5px;
+	      text-align: left;
+	   }
+
+	   tr:nth-child(even) {
+	      background-color: #f7c873;
+	   }
+
+	   tr:nth-child(odd) {
+	     background-color:#f8f8f8;
+	   }
+
+	   th {
+	      background-color: #a64452;
+	      color: #f8f8f8;
+	      text-align: center;
+	   }
+
+	</style>
+</head>
+
+<body>
+	<header>
+		<div class="animation_header">
+			<!-- div class="lpnulogo"><a href="#pic"><img src="lpnu-logo.png"></a></div -->
+			<h1>Проблеми теорії та практики застосування Цивільного процесуального кодексу України</h1>
+		</div>
+	</header>
+
+	<nav>
+		<ul class="nav">
+			<li>
+				<a href="#home">Головна</a>
+			</li>
+
+			<li>
+				<a href="#news">Новини</a>
+			</li>
+
+			<li class="dropdown">
+				<a class="dropbtn" href="down">Студентам</a>
+
+				<div class="dropdown-content">
+					<a href="#program">Програма</a> <a href="#labs">Лабораторні</a> <a href="#literature">Література</a>
+				</div>
+			</li>
+
+			<li>
+				<a href="#feed">Відгуки</a>
+			</li>
+
+			<li>
+				<a href="#contact">Контакти</a>
+			</li>
+
+			<li style="float:right">
+				<a class="active" href="#admin">Адмін</a>
+			</li>
+		</ul>
+	</nav>
+	<br>
+	<br>
+
+	<table>
+		<tr>
+			<th>Дисципліна</th>
+
+			<th>Викладач</th>
+
+			<th>К-ть кредитів</th>
+		</tr>
+
+
+		<tr>
+			<td>Математичний аналіз</td>
+
+			<td>Верес З.Є.</td>
+
+			<td>4</td>
+		</tr>
+
+
+		<tr>
+			<td>Дискретна математика</td>
+
+			<td>Верес З.Є.</td>
+
+			<td>2</td>
+		</tr>
+
+
+		<tr>
+			<td>Диференціальні рівняння</td>
+
+			<td>Верес З.Є.</td>
+
+			<td>3</td>
+		</tr>
+
+
+		<tr>
+			<td>Лінійна алгебра</td>
+
+			<td>Верес З.Є.</td>
+
+			<td>3</td>
+		</tr>
+
+
+		<tr>
+			<td>Чисельні методи</td>
+
+			<td>Верес З.Є.</td>
+
+			<td>2</td>
+		</tr>
+	</table>
+	<br>
+
+
+	<footer>
+		Posted by: Yana D
+	</footer>
+</body>
+</html>
