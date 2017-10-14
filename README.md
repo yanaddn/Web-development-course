@@ -1,2 +1,2 @@
-# Web-programming
+# Web development course 
 labs
