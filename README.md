@@ -1,2 +1,2 @@
 # Web development course 
-labs
+laboratory works
