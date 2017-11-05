@@ -1,0 +1,22 @@
+CACHE MANIFEST
+#11/01/2017 v1.0
+
+CACHE:
+styles.css
+
+index.html
+news.html
+responses.html
+table.html
+admin.html
+
+pages2.jpg
+pen.jpg
+case.jpg
+books.jpg
+
+NETWORK:
+*
+
+FALLBACK:
+error.html
