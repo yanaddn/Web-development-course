@@ -1,9 +1,9 @@
  .container {
- 	padding: 80px 120px;
+	 padding: 40px;
  }
-
+ 
  .parallax {
- 	background-image: url(pages.jpg);
+ 	background-image: url(pages2.jpg);
  	min-height: 750px;
  	background-attachment: fixed;
  	background-position: center;
@@ -13,7 +13,7 @@
  }
 
  .titleimg {
- 	background-image: url(pages.jpg);
+ 	background-image: url(pages2.jpg);
  	max-height: 750px;
  	background-attachment: fixed;
  	background-position: center;
@@ -25,7 +25,6 @@
  .glyphicon.glyphicon-chevron-down {
  	color: white;
  }
-
  /* TEXT ANIMATION */
 
  /* 
@@ -85,7 +84,7 @@
  	border-color: transparent;
  }
 
- /* DROPDOWN */
+ /* Dropdown */
 
  .open .dropdown-toggle {
  	color: #fff;
@@ -149,20 +148,34 @@
  	color: #000;
  }
 
- /* CONTACTS */
+ /* CONTACT */
 
- .сontact {
+ .сontacts {
  	background: #fff;
+ 	color: #000; 
+ }
+
+ .сontacts h3 {
  	color: #000;
  }
 
- .сontact h3 {
- 	color: #000;
- }
-
- .сontact p {
+ .сontacts p {
  	font-style: italic;
  }
+ 
+  /* REVIEW */
+ 
+ .review-author {
+    font-weight: bold;
+    font-size: large;
+}
+
+.review-date{
+
+    color: #979797;
+    font-style: italic;
+    font-size: 90%;
+}
 
  /* FOOTER */
 

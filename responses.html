@@ -3,7 +3,7 @@
     <head>
         <title>Відгуки</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">	
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -37,52 +37,55 @@
         </nav>
         <div class="titleimg">
             <div class="container text-center align-middle">
-                <p>Відгуки</p>
+                <br><p>ВІДГУКИ</p>
             </div>
         </div>
         <br>
-        <div class="container">
-            <div class="media">
-                <div class="media-left">
-                    <img src="vintage.jpg" class="media-object" style="width:100px">
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Петро Петрович</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-            <hr>
-            <div class="media">
-                <div class="media-body">
-                    <h4 class="media-heading">Святослав Святославович</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore abc magna aliqua.</p>
-                </div>
-                <div class="media-right">
-                    <img src="vintage.jpg" class="media-object" style="width:100px">
-                </div>
-            </div>
-            <hr>
-            <div class="media">
-                <div class="media-left">
-                    <img src="vintage.jpg" class="media-object" style="width:100px">
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Дмитро Дмитрович</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-12 form-group">
-                    <textarea class="form-control" id="comments" name="comments" placeholder="Залишити коментар..." rows="3"></textarea>
-                    <br>
-                    <button class="btn pull-right" type="submit">Надіслати</button>
-                </div>
-            </div>
-        </div>
+		
+		
+		
+<div class="container">
+
+		<div id="media">
+			<div class="media-body">
+				<br>
+				<span class="review-author">Вася Пупкін</span>
+				<span class="review-date">Wed Nov 05 2017 20:09:26 GMT+0200 (FLE Standard Time)</span>
+				<br>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus eget ipsum nec vulputate.
+					Sed vestibulum augue vel dictum imperdiet. Duis sed augue posuere, tempus diam vitae, efficitur
+					ligula. Ut nec neque condimentum, vehicula ligula bibendum, bibendum lacus. Maecenas consectetur
+					hendrerit laoreet. Donec massa nunc, mattis ut auctor non, lobortis a mauris.</p>
+				</div>
+				<hr><br>
+		</div>
+		
+		<h3>Залиште свій коментар:</h3><br>
+
+		<form id="form">		
+				<div class="col-sm-12 form-group">
+					<input id="name" type="text" class="form-control" placeholder="Прізвище, ім'я">
+				</div>
+				<div class="col-sm-12 form-group">
+					<textarea id="text" class="form-control" rows="7" placeholder="Новий відгук..."></textarea>
+					<br>
+					<input type="button" value="Надіслати" class="btn pull-right" onclick="addReview()">
+				</div>			
+		</form>
+</div>
+	
         <footer class="text-center">
             <p>Made By <a href="https://www.facebook.com/yana.didun" data-toggle="tooltip">Yana Didun</a></p>
         </footer>
+		
+		
+<script src="admin.js"></script>
+<script src="responses.js"></script>
+<script src='js/jquery.min.js'></script>
+<script src='js/scroolreveal.js'></script>
+<script src='js/bootstrap.min.js'></script>
+<script src='js/magnific-popup.js'></script>
+
     </body>
 </html>
 
