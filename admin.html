@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <script src="admin.js"></script>
+
         <link href="styles.css" media="screen" rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -40,10 +43,10 @@
                 <br><p>Додати новину</p>
             </div>
         </div>
-		
+
         <div class="container">
             <div class="row">
-			
+
                 <div class="col-sm-6 form-group">
 				<form id="news-img-form">
                     <img src="camera-logo.png" class="media-object" style="width:65%"><br>
@@ -51,32 +54,24 @@
                     <button class="btn btn-primary btn-block" type="submit">Обрати зображення</button>
 					</form>
                 </div>
-				
+
                 <div class="col-sm-6 form-group">
 				    <form id="news-form" onsubmit="return(validate());">
                     <input id="title" class="form-control" name="title" placeholder="Заголовок новини"><br>
-					
+
                     <textarea id="news-text" class="form-control" placeholder="Уведіть текст..." rows="14"></textarea>
-                    <br>					
-					
-                    <button class="btn btn-primary btn-block" onclick="addNews()" type="submit">Надіслати</button>
+                    <br>
+
+                    <button class="btn btn-primary btn-block" onclick="addNews()" type="submit" values="Надіслати">Надіслати</button>
 					</form>
                 </div>
             </div>
         </div>
 		<br>
-		
+
         <footer class="text-center">
             <p>Made By <a href="https://www.facebook.com/yana.didun" data-toggle="tooltip">Yana Didun</a></p>
-        </footer> 
-		
-		<script src="admin.js"></script>
-<script src="responses.js"></script>
-<script src='js/jquery.min.js'></script>
-<script src='js/scroolreveal.js'></script>
-<script src='js/bootstrap.min.js'></script>
-<script src='js/magnific-popup.js'></script>
+        </footer>
 
     </body>
 </html>
-
