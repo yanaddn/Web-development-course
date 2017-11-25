@@ -114,6 +114,12 @@
  	color: #555;
  }
 
+  /* TABLE */
+
+ .tabletitle p {
+   text-align: center; 
+ }
+
  /* NEWS */
 
  .news {
