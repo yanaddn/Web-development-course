@@ -22,13 +22,9 @@ function readOfflineNews() {
             var out = document.createElement('div');
             out.id = 'news';
             out.innerHTML =
-                "<div class='col-sm-4'>" +
-                "<div class='card'> " +
-                "<img src='case.jpg'" + img + " width='100%'>" + // Removed ''
-                "<div class='caption'><p>" + news[0].name + "</p></div>" +
-                " <p>" + news[0].text + "</p>" +
-                "</a></div></div>" + "<button class="btn">Більше</button>"; // Added butoon "More"
-            parentElem.appendChild(out);
-        }
-
-}
+                "<div class='col-sm-4'>" + "<div class='thumbnail'>"
+                "<p>" + news[0].name + "</p>" +
+                "<p>" + news[0].text + "</p></div></div>";
+                parentElem.appendChild(out);
+              }
+            }

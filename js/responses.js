@@ -36,7 +36,8 @@ function addReview() {
             "   <p><br>" + text + "</p></div><hr><br>";
         parentElem.appendChild(out);
         document.getElementById('form').reset();
-    } else {
+    }
+    else {
             var date = new Date;
             var author = document.getElementById('name').value;
             var text = document.getElementById('text').value;

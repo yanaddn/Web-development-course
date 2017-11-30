@@ -9,6 +9,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <script src="js/admin.js"></script>
+        <script src="js/news.js"></script>
+        <script src="js/indexeddb.js"></script>
 
         <link href="styles.css" media="screen" rel="stylesheet" type="text/css">
     </head>
@@ -59,21 +61,23 @@
             <div class="row">
 
                 <div class="col-sm-6 form-group">
+
 				<form id="news-img-form">
-                    <img src="img/camera-logo.png" class="media-object" style="width:65%"><br>
-					<input type="file" name="fileupload" value="fileupload" id="fileupload">
-                    <button class="btn btn-primary btn-block" type="submit">Обрати зображення</button>
-					</form>
+
+					<input type="file" class="form-control-file" id="news-img" accept="image/*">
+
+        </form>
+        <img src="img/camera-logo.png" id='target'  class="media-object" style="width:65%"><br>
                 </div>
 
                 <div class="col-sm-6 form-group">
-				    <form id="news-form" onsubmit="return(validate());">
-                    <input id="title" class="form-control" name="title" placeholder="Заголовок новини"><br>
+				    <form id="news-form">
+                    <input id="news-name" type="text" class="form-control" placeholder="Заголовок новини"><br>
 
-                    <textarea id="news-text" class="form-control" placeholder="Уведіть текст..." rows="14"></textarea>
+                    <textarea id= "news-text" type="text" class="form-control admin-text"  rows="14" placeholder="Уведіть текст..."></textarea>
                     <br>
 
-                    <button class="btn btn-primary btn-block" onclick="addNews()" type="submit" values="Надіслати">Надіслати</button>
+                    <button class="btn btn-primary btn-block" onclick="addNews()" type="submit">Надіслати</button>
 					</form>
                 </div>
             </div>
