@@ -14,17 +14,41 @@ function isOnline() {
 }
 
 function readOfflineNews() {
-        len = localStorage.length + 1;
-        for (var k = 1; k < len; k++) {
-            news = JSON.parse(localStorage.getItem('n' + k));
-            var img = localStorage.getItem('i' + k);
-            var parentElem = document.getElementById('news-list');
-            var out = document.createElement('div');
-            out.id = 'news';
-            out.innerHTML =
-                "<div class='col-sm-4'>" + "<div class='thumbnail'>"
-                "<p>" + news[0].name + "</p>" +
-                "<p>" + news[0].text + "</p></div></div>";
-                parentElem.appendChild(out);
-              }
-            }
+  if (useLocalStorage) {
+      len = localStorage.length + 1;
+      for (var k = 1; k < len; k++) {
+          news = JSON.parse(localStorage.getItem('n' + k));
+          var img = localStorage.getItem('i' + k);
+          var parentElem = document.getElementById('news-list');
+          var out = document.createElement('div');
+          out.id = 'news';
+          out.innerHTML =
+          "<div class='col-md-4'>" +
+          "<div class='thumbnail'> " +
+          "<a href='#'> " + news[0].name + "</p></div>" +
+          " <p>" + news[0].text + "</p>" +
+          "</a></div></div>";
+          parentElem.appendChild(out);
+          localStorage.removeItem(k);
+      }
+  } else {
+      var transaction = db.transaction(["news"], "readonly");
+      var store = transaction.objectStore("news");
+      store.openCursor().onsuccess = function (e) {
+          var cursor = e.target.result;
+          if (cursor) {
+              cursor.continue();
+              var parentElem = document.getElementById('news-list');
+              var out = document.createElement('div');
+              out.id = 'news';
+              out.innerHTML =
+                  "<div class='col-md-4'>" +
+                  "<div class='thumbnail'> " +
+                  "<a href='#'> " + cursor.value.name + "</p></div>" +
+                  " <p>" + cursor.value.text + "</p>" +
+                  "</a></div></div>";
+              parentElem.appendChild(out);
+          }
+      }
+  }
+}

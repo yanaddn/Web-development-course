@@ -1,7 +1,7 @@
 window.addEventListener('load', function () {
     function updateOnlineStatus(event) {
         if (isOnline()) {
-            readOfflineComments();
+            readOfflineReview();
         }
     }
 
@@ -20,48 +20,78 @@ function addReview() {
         alert('Заповніть всі поля');
         return false;
     }
-
-    if (isOnline()){
-
+    if (isOnline()) {
         var date = new Date;
         var author = document.getElementById('name').value;
         var text = document.getElementById('text').value;
-        var parentElem = document.getElementById('media');
+        var parentElem = document.getElementById('reviews-list');
         var out = document.createElement('div');
-        out.id = 'reviews';
+        out.id = 'review';
         out.innerHTML =
-            "<div class='media-body'>" +
+            "<div class='container card'><br>" +
             "   <span class='review-author'>" + author + "</span>" +
             "   <span class='review-date'>" + date + "</span>" +
-            "   <p><br>" + text + "</p></div><hr><br>";
+            "   <p><br>" + text + "</p><br></div>";
         parentElem.appendChild(out);
         document.getElementById('form').reset();
-    }
-    else {
+    } else {
+        if (useLocalStorage) {
             var date = new Date;
             var author = document.getElementById('name').value;
             var text = document.getElementById('text').value;
             i++;
             var list = [];
             list.push({"name": author, "text": text, "date": date});
-            localStorage.setItem('review' + i, JSON.stringify(list));
+            localStorage.setItem('r' + i, JSON.stringify(list));
+        } else {
+            var transaction = db.transaction(["reviews"], "readwrite");
+            var store = transaction.objectStore("reviews");
+            var review = {
+                message: document.getElementById('text').value,
+                author: document.getElementById('name').value,
+                time: new Date
+            };
+            store.add(review);
+        }
         document.getElementById('form').reset();
     }
 }
 
-function readOfflineComments() {
+function readOfflineReview() {
+    if (useLocalStorage) {
         len = localStorage.length + 1;
         for (var k = 1; k < len; k++) {
-            review = JSON.parse(localStorage.getItem('review' + k));
-            var parentElem = document.getElementById('media');
+            review = JSON.parse(localStorage.getItem('r' + k));
+            var parentElem = document.getElementById('reviews-list');
             var out = document.createElement('div');
             out.id = 'review';
             out.innerHTML =
-                "<div class='media-body'>" +
-                "   <span class='review-author'>" + review[0].author + "</span>" +
-                "   <span class='review-date'>" + review[0].date + "</span>" +
-                "   <p><br>" + review[0].text + "</p></div><hr><br>";
+            "<div class='media-body'>" +
+            "<span class='review-author'>" + review[0].author + "</span>" +
+            "<span class='review-date'>" + review[0].date + "</span>" +
+"<p><br>" + review[0].text + "</p></div><hr><br>";
             parentElem.appendChild(out);
             localStorage.removeItem(k);
         }
+    } else {
+        var transaction = db.transaction(["reviews"], "readonly");
+        var store = transaction.objectStore("reviews");
+
+        store.openCursor().onsuccess = function (e) {
+            var cursor = e.target.result;
+            if (cursor) {
+
+                var parentElem = document.getElementById('reviews-list');
+                var out = document.createElement('div');
+              //  out.id = 'review';
+                out.innerHTML =
+                "<div class='media-body'>" +
+                "<span class='review-author'>" + cursor.value.author + "</span>" +
+                "<span class='review-date'>" + cursor.value.date + "</span>" +
+                "<p><br>" + cursor.value.text + "</p></div><hr><br>";
+                parentElem.appendChild(out);
+                cursor.continue();
+            }
+        }
+    }
 }
